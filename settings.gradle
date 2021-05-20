@@ -1,0 +1,2 @@
+rootProject.name = 'bank-sandbox'
+include 'tranzaction-api', 'account-api', 'statement-api', 'integration-tests'

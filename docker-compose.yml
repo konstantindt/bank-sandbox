@@ -1,0 +1,14 @@
+services:
+  storage:
+    container_name: derby-dev
+    environment:
+      - TZ=UTC
+    build: ./relational-database/
+    ports:
+      - "1527:1527"
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "1527", "||", "exit", "1"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

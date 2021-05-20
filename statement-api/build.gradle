@@ -1,0 +1,21 @@
+apply plugin: 'application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    implementation 'commons-cli:commons-cli:1.4'
+
+    compileOnly 'jakarta.enterprise:jakarta.enterprise.cdi-api:3.0.0'
+    implementation 'jakarta.ws.rs:jakarta.ws.rs-api:3.0.0'
+
+    implementation 'org.apache.meecrowave:meecrowave-core:1.2.11'
+}
+
+application {
+    mainClass = 'com.terziev.konstantin.statementapi.Server'
+}
